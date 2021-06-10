@@ -17,18 +17,17 @@ ezby = gets.chomp
 case ezby
 
 #new account
-when "1"
-  print("[1] soon: ")
+#when "1"
+ # print("[1] soon: ")
 
-  ezby = gets.chomp
+  #ezby = gets.chomp
 
-  print ("[1] Type a command to leave: ")
+ # print ("[1] Type a command to leave: ")
 
-  cc = gets.chomp
+  #cc = gets.chomp
 
   #login
-
-when "2"
+#when "2"
   print("[2] soon ")
 
   ezby = gets.chomp
@@ -128,22 +127,22 @@ when "7"
   print("[7] Type a command to leave: ")
 
   cc = gets.chomp
-when "10"
-  username = ["ezby", "ok", "dfdf"]
-  pass = ["ezby", "adtuce", "truc"]
+#when "10"
+ # username = ["ezby", "ok", "dfdf"]
+  #pass = ["ezby", "adtuce", "truc"]
 
-  print("[1] Username:")
-  username = gets.chomp
+  #print("[1] Username:")
+  #username = gets.chomp
 
-  print("[1] Password:")
-  password = gets.chomp
+  #print("[1] Password:")
+  #password = gets.chomp
 
-  user = find_user(username, password)
-  unless user.nil?
-    current_user = user
-  else
-    print("User cannot be found")
-  end
-end
-
+  #user = find_user(username, password)
+  #unless user.nil?
+   # current_user = user
+  #else
+   # print("User cannot be found")
+  #end
+#end
+#when 10 is for soon...
 #are you a h4xor ?
