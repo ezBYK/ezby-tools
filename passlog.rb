@@ -1,148 +1,190 @@
-puts "      <|--|> ezby'tools coded in ruby d: <|--|>
-k       ----------------------------------------
+option_pb = "      <|--|> ezby'tools coded in ruby d: <|--|>
+
+0000_____________0000________0000000000000000__000000000000000000+
+00000000_________00000000______000000000000000__0000000000000000000+
+000____000_______000____000_____000_______0000__00______0+
+000______000_____000______000_____________0000___00______0+
+0000______0000___0000______0000___________0000_____0_____0+
+0000______0000___0000______0000__________0000___________0+
+0000______0000___0000______0000_________000___0000000000+
+0000______0000___0000______0000________0000+
+000______000_____000______000________0000+
+000____000_______000____000_______00000+
+00000000_________00000000_______0000000+
+  0000_____________0000________000000007
+       ----------------------------------------
 
 
---> [1] : Signup (soon)
---> [2] : Login  (soon)
---> [3] : Spam numbers (nombre)
---> [4] : find the number (trouve le nombre)
---> [5] : Is Even ? (pair ou impair)
---> [6] : is paylndrome ?
---> [7] : whoami (about)
+--> [1] : Signup (crée un compte)
+--> [2] : Login (connecte-toi !) 
+--> [3] : Spam numbers (nombre)       [make an account to use]  
+--> [4] : find the number             [make an account to use]
+--> [5] :Is Even ? (pair ou impair    [make an account to use]
+--> [6] : Whoami ?
+--< [+] soon...
  "
-print("[-] Choose a number! : ")
 
-ezby = gets.chomp
+option_usr = "
 
-case ezby
+<|--|> ezby'tools coded in ruby d: <|--|>
 
-#new account
-#when "1"
- # print("[1] soon: ")
+0000_____________0000________0000000000000000__000000000000000000+
+00000000_________00000000______000000000000000__0000000000000000000+
+000____000_______000____000_____000_______0000__00______0+
+000______000_____000______000_____________0000___00______0+
+0000______0000___0000______0000___________0000_____0_____0+
+0000______0000___0000______0000__________0000___________0+
+0000______0000___0000______0000_________000___0000000000+
+0000______0000___0000______0000________0000+
+000______000_____000______000________0000+
+000____000_______000____000_______00000+
+00000000_________00000000_______0000000+
+  0000_____________0000________000000007
 
-  #ezby = gets.chomp
+ --> [2] : Logout
+ --> [3] : Spam numbers (nombre)
+ --> [4] : find the number : 
+ --> [5] : Is Even ? (pair ou impair)
+ --> [6] : whoami (about)
+ --< [7] soon...
+ --> [8] : Show Users
+ --> [q] : Exit"
+tbusr = { "admin" => "admin", "ezby" => "ezby" }
+basic_user = nil
 
- # print ("[1] Type a command to leave: ")
+while true
+  if basic_user
+    puts "Your logged as #{basic_user}"
+    puts option_usr
+  else
+    puts option_pb
+  end
 
-  #cc = gets.chomp
-
-  #login
-#when "2"
-  print("[2] soon ")
+  print("[-] Choose a number! : ")
 
   ezby = gets.chomp
 
-  print ("[2] Type a command to leave: ")
+  case ezby
 
-  cc = gets.chomp
-when "3"
-  for num in 1...10000000000000
-    puts num
-  end
+  #new account
+  when "1"
+    system("clear")
+    if basic_user
+      #  print("[1] Are you sure ? [Y/N]: ")
+      #   yes_no = gets.chomp
+      #if yes_no == 'y'
+      tbusr[basic_user]
+      basic_user = nil
+    else
+      print("[1] Enter username: ")
 
-  #devine le chiffre
+      username = gets.chomp
 
-when "4"
-  adevenir = 32
+      print("[1] Enter password: ")
 
-  a = 0
+      password = gets.chomp
 
-  while adevenir != a
-    print("[4] met un chiffre: ")
+      tbusr[username] = password
 
-    a = gets.chomp.to_i
-
-    if a > adevenir
-      puts "trop grand :/"
-    elsif a < adevenir
-      puts "trop petit :("
+      print ("[1] You can now login as #{username}: ")
     end
-  end
 
-  puts "GG you won ! :)"
+    #login
 
-  print("[4] Type a command to leave: ")
+  when "2"
+    system("clear")
+    if basic_user
+      basic_user = nil
+    else
+      print("[2] Enter username: ")
 
-  cc = gets.chomp
+      username = gets.chomp
 
-  #pair ?
-when "5"
-  print("[5] Enter a number: ")
+      print("[2] Enter password: ")
 
-  chiffre = gets.chomp.to_i
+      password = gets.chomp
 
-  if chiffre.even?
-    puts "(even)c'est pair :)"
-  else
-    puts "(odd)c'est impair :("
+      if tbusr[username] == password
+        basic_user = username
 
-    print("Enter a number: ")
+        print ("[2] You are now logged as #{username}: ")
+      else
+        print ("[2] Password or username incorrect")
+      end
+    end
+  when "3"
+    next if basic_user.nil?
+    for num in 1...10000000000000
+      puts num
+    end
+
+    #devine le chiffre
+
+  when "4"
+    system("clear")
+    next if basic_user.nil?
+
+    adevenir = 32
+
+    a = 0
+
+    while adevenir != a
+      print("[4] met un chiffre: ")
+
+      a = gets.chomp.to_i
+
+      if a > adevenir
+        puts "trop grand :/"
+      elsif a < adevenir
+        puts "trop petit :("
+      end
+    end
+
+    puts "GG you won ! :)"
+
+    #pair ?
+
+  when "5"
+    next if basic_user.nil?
+    system("clear")
+    print("[5] entrez un nombre: ")
 
     chiffre = gets.chomp.to_i
 
     if chiffre.even?
-      puts "(even)c'est pair :)"
+      puts "c'est pair :)"
     else
-      puts "(odd)c'est impair :("
+      puts "c'est impair :/ "
     end
-  end
-
-  print("[5] Tape a Command To Leave: ")
-
-  imthebest = gets.chomp
-
-  #Palyndrome
-when "6"
-  puts "[6] Mets Un Chiffre : "
-
-  mot = gets.chomp
-
-  mot_inverse = mot.reverse
-
-  if mot.reverse == mot
-    print("[6] ce mot est un palyndrome")
-  else
-    puts "Ce Mot n'est pas un palyndrome"
-  end
-
-  print ("[6] Type a command to leave: ")
-
-  okmek = gets.chomp
-when "7"
-  puts "Im ezby, I love internet technologies, ctf,osint but not coding... d:  
+  when "6"
+    system("clear")
+    puts "
+    --------------------------------------------------------------------------------------------------------------------------------
+    HEY Im ezby, I love internet technologies, ctf,osint but not coding... d:  
 
 [Root-Me]  : https://www.root-me.org/ezbylovesh /:
 [Discord]  : ezb3sh#0443    :)
 [Telegram] : T.me/rpdiscord :)
  "
-  puts "Do you have some idea ? for this project (always in ruby) please contact me if you have"
+    puts "Do you have some idea ? for this project (always in ruby) please contact me if you have"
 
-  puts "-"
+    puts "-"
 
-  print "hey (if the code is bad for you or there are 
-    some error please report me.(this code is coded just for my train d:) "
+    print "hey (if the code is bad for you or there are 
+    some error please report me.(this code is coded just for my train d:) 
+    --------------------------------------------------------------------------------------------------------------------------------  --------------------------------------------------------------------------------------------------------------------------------  -------------------------------------------------------------------------------------------------------------------------------"
 
-  puts "-"
+    puts "-"
+  when "q"
+    puts("ByeBye! pls re do an account to login")
 
-  print("[7] Type a command to leave: ")
+    exit
+  else
+    puts("Command unknow. Please try again")
+    system("clear")
+  end
 
-  cc = gets.chomp
-#when "10"
- # username = ["ezby", "ok", "dfdf"]
-  #pass = ["ezby", "adtuce", "truc"]
+  puts ""
+end
 
-  #print("[1] Username:")
-  #username = gets.chomp
-
-  #print("[1] Password:")
-  #password = gets.chomp
-
-  #user = find_user(username, password)
-  #unless user.nil?
-   # current_user = user
-  #else
-   # print("User cannot be found")
-  #end
-#end
-#when 10 is for soon...
 #are you a h4xor ?
