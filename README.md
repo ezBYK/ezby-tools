@@ -1,4 +1,4 @@
-# 🍭ezby-tools🍭
+#ezby-tool
 
 <h1>💻 Hey for use this tools you need to have ruby so </h1>
 
@@ -12,4 +12,3 @@
   
   
   <h3> My first script (a basic script I don't like coding d; </h3>
-<img align='right' src="http://cloud-3.steamusercontent.com/ugc/351645701781590816/801740A0873F94658D041D08C1B2897914892DE4/" width="800px">
