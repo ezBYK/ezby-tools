@@ -1,4 +1,4 @@
-option_pb = "      <|--|> ezby'tools coded in ruby d: <|--|>
+option_pb = "      <|--|> Hello  <|--|>
 
 0000_____________0000________0000000000000000__000000000000000000+
 00000000_________00000000______000000000000000__0000000000000000000+
@@ -159,21 +159,9 @@ while true
   when "6"
     system("clear")
     puts "
-    --------------------------------------------------------------------------------------------------------------------------------
-    HEY Im ezby, I love internet technologies, ctf,osint but not coding... d:  
 
-[Root-Me]  : https://www.root-me.org/ezbylovesh /:
-[Discord]  : ezb3sh#0443    :)
-[Telegram] : T.me/rpdiscord :)
- "
-    puts "Do you have some idea ? for this project (always in ruby) please contact me if you have"
-
-    puts "-"
-
-    print "hey (if the code is bad for you or there are 
-    some error please report me.(this code is coded just for my train d:) 
     --------------------------------------------------------------------------------------------------------------------------------  --------------------------------------------------------------------------------------------------------------------------------  -------------------------------------------------------------------------------------------------------------------------------"
-
+puts "nothing"
     puts "-"
   when "q"
     puts("ByeBye! pls re do an account to login")
